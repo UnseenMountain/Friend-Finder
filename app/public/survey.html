@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="/style.css">
+    <!-- <link rel="stylesheet" type="text/css" href="./style.css"> -->
 
     <title>Document</title>
 </head>
@@ -167,7 +167,8 @@
 	  src="https://code.jquery.com/jquery-3.2.1.min.js"
 	  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
 	  crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>
 
@@ -205,10 +206,11 @@
 			var currentURL = window.location.origin;
 
 			// Ajax call for receiving response after POST req
-			$.post(currentURL + "/api/friends", newUser, function(data) {
+			$.post(currentURL + "/api/friends", newUser, function(data) { 
+				console.log("data from frount end", data);
 				$("#bestFriend").text(data.name);
 				$("#bestFriendPhoto").attr("src", data.photo);
-				$("#bestFriendModal").modal("toggle");
+				$("#bestFriendModal").modal("show");
 			});
 		} else {
 			// If a required field is missing, show alert
@@ -216,99 +218,3 @@
 		}
 	});
 </script>
-
-
-
-
-
-<!-- <body>
-    <div class="container">
-
-        <div class="input-group flex-nowrap">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="addon-wrapping">#</span>
-            </div>
-            <input type="text" class="form-control" placeholder="name" aria-label="Username" aria-describedby="addon-wrapping" required>
-          </div>
-        <div class="input-group flex-nowrap">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="addon-wrapping">@</span>
-            </div>
-            <input type="text" class="form-control" placeholder="Picture URL" aria-label="Username" aria-describedby="addon-wrapping"  type="text" name="Name" required>
-            <input type="submit">
-        </div>
-
-       
-            
-         
-
-
-        <h2> Question: 1 Do you consider your self an adventorious person</h2>
-        <select>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3<option>
-            <option value="4">4</option>
-            <option value="5">5 (strongly agree)</option>
-          </select>
-        
-        <h2>question 2: How crazy do you think you are?</h2>
-          <select>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3<option>
-            <option value="4">4</option>
-            <option value="5">5 (strongly agree)</option>
-          </select>
-        
-        
-          <h2>question 3: Do you walk a lonly road</h2>
-          <select>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3<option>
-            <option value="4">4</option>
-            <option value="5">5 (strongly agree)</option>
-          </select>
-        
-        
-          <h2>question 4: You find it easy to stay relaxed and focused even when there is some pressure.</h2>
-          <select>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3<option>
-            <option value="4">4</option>
-            <option value="5">5 (strongly agree)</option>
-          </select>
-        
-        
-          <h2>Question 5: People can rarely upset you.
-        </h2>
-          <select>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3<option>
-            <option value="4">4</option>
-            <option value="5">5 (strongly agree)</option>
-          </select>
-         
-          <h2>Question 6: In a discussion, truth should be more important than people’s sensitivities.</h2>
-          <select> 
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3<option>
-            <option value="4">4</option>
-            <option value="5">5 (strongly agree)</option>
-          </select>
-        
-        
-         
-          
-
-    </div>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
-</body>
-</html> -->

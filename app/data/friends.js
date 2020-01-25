@@ -97,7 +97,7 @@ var friends = [
     },
     {
         "name": "T",
-        "photo": "D",
+        "photo": "https://avatars0.githubusercontent.com/u/21323178?s=460&v=4",
         "scores": [
             "2",
             "2",
@@ -113,7 +113,7 @@ var friends = [
     },
     {
         "name": "oigfogf",
-        "photo": "gr;ltkr;tl",
+        "photo": "https://avatars0.githubusercontent.com/u/21323178?s=460&v=4",
         "scores": [
             "2",
             "3",
@@ -177,7 +177,7 @@ var friends = [
     },
     {
         "name": "mike",
-        "photo": "https://mike.png",
+        "photo": "https://avatars0.githubusercontent.com/u/21323178?s=460&v=4",
         "scores": [
             "3",
             "3",
@@ -193,7 +193,7 @@ var friends = [
     },
     {
         "name": "K",
-        "photo": "kk",
+        "photo": "https://avatars0.githubusercontent.com/u/21323178?s=460&v=4",
         "scores": [
             "5",
             "5",
@@ -208,3 +208,5 @@ var friends = [
         ]
     }
 ]
+
+module.exports = friends;
